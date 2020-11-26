@@ -32,15 +32,15 @@
   width: 100%;
   grid-template-areas: 
   'al ad';
-  grid-template-rows: 200px 1fr;
+  grid-template-rows: 220px 1fr;
   grid-template-columns: 2fr 10fr;
-  grid-gap: 20px;
+  grid-column-gap: 20px;
 }
 
 .author__logo {
   grid-area: al;
-  width: 200px;
-  height: 200px;
+  width: 220px;
+  height: 220px;
 }
 
 .author__description {
