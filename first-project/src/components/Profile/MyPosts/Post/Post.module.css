@@ -1,6 +1,7 @@
 .item {
   display: flex;
   align-items: start;
+  margin-top: 40px;
 }
 .wrapper {
   padding-right: 20px;
@@ -17,7 +18,15 @@
 }
 
 .info {
+  display: flex;
+  flex-direction: column;
   margin: 0;
   font-size: 22px;
   color: #00051d;
+}
+
+.like {
+  font-weight: bold;
+  font-size: 16px;
+  color: #3b5998;
 }

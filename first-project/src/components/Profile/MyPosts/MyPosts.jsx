@@ -10,8 +10,8 @@ const MyPosts = () => {
         <textarea autoComplete='off' rows='5' name='message' className={classes.new__post} id='message' placeholder='your news...'></textarea>
         <button className={classes.button}>Send</button>
       </div>
-      <Post message='We bomb the ReactJS at the rate of Dimych!'/>
-      <Post message='Hello! I am learning ReactJS!'/>
+      <Post message='We bomb the ReactJS at the rate of Dimych!' likeCount='15' />
+      <Post message='Hello! I am learning ReactJS!' likeCount='20' />
     </div>
   );
 }

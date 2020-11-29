@@ -12,6 +12,7 @@
 
 .posts {
   grid-area: p;
+  padding-bottom: 40px;
 }
 
 .new__post {
