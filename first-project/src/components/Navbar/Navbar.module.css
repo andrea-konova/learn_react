@@ -34,7 +34,7 @@
   border-radius: 5px;
 }
 
-.item.active {
+.active {
   font-weight: bold;
   color: #1f2128;
   background-color: #f6f7f9;
