@@ -3,6 +3,12 @@
     padding: 5px 0;
     color: #00051d;
     text-decoration: none;
+    transform: translate(0.3s);
+}
+
+.dialog:hover {
+    font-weight: bold;
+    color: #1f2128;
 }
 
 .active {
