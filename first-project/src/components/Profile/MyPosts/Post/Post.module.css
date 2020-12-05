@@ -1,6 +1,6 @@
 .item {
   display: flex;
-  align-items: start;
+  align-items: flex-start;
   margin-top: 40px;
 }
 .wrapper {
