@@ -1,0 +1,18 @@
+.friends {
+    margin: 100px 0;
+    padding: 10px;
+    background-color: #ffffff;
+}
+
+.title {
+    margin: 0;
+    padding-bottom: 20px;
+    font-size: 32px;
+    text-align: center;
+    color: #3b5998;
+}
+
+.main__friends {
+    display: flex;
+    justify-content: space-around;
+}
