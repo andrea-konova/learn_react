@@ -5,7 +5,10 @@
   justify-content: left;
   background-color: #3b5998;
 }
-.header img {
+
+.logo {
   padding-left: 10px;
-  width: 40px;
+  font-size: 32px;
+  font-weight: bold;
+  color: #ffffff;
 }

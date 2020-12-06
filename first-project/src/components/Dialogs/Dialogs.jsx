@@ -10,6 +10,13 @@ const Dialogs = (props) => {
   let messsagesElements = props.state.messages
     .map( (m, index) => <Message message={m.message} id={m.id} key={index} /> );
 
+  let newMessageElement = React.createRef();
+
+  const addMessage = () => {
+    let mess = newMessageElement.current.value;
+    alert(mess);
+  };
+
   return (
     <div className={classes.dialogs}>
       <div className={classes.dialogs__items}>
@@ -17,6 +24,11 @@ const Dialogs = (props) => {
       </div>
       <div className={classes.messages}>
         { messsagesElements }
+      </div>
+      <div className={classes.add__message}>
+        <textarea ref={ newMessageElement } autoComplete='off' rows='3'
+                  className={classes.new__mess}  placeholder='your message...'></textarea>
+        <button onClick={ addMessage } className={classes.button}>Send Message</button>
       </div>
     </div>
   );

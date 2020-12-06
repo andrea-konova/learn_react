@@ -1,3 +1,5 @@
+import {rerenderEntireTrie} from "../render";
+
 let state = {
   profilePage: {
     posts: [
@@ -26,9 +28,23 @@ let state = {
     friends: [
       {id: 1, name: 'Dimych'},
       {id: 2, name: 'Andrew'},
-      {id: 3, name: 'Anna'}
+      {id: 3, name: 'Anna'},
+      {id: 4, name: 'Tima'},
+      {id: 5, name: 'Sasha'},
+      {id: 6, name: 'Vika'}
     ]
   }
+};
+
+export let addPost = (postMessage) => {
+  let newPost = {
+    id: 4,
+    message: postMessage,
+    likeCount: 0
+  };
+
+  state.profilePage.posts.push(newPost);
+  rerenderEntireTrie(state);
 };
 
 export default state;
