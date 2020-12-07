@@ -1,4 +1,6 @@
-import {rerenderEntireTrie} from "../render";
+let rerenderEntireTrie = () => {
+
+};
 
 let state = {
   profilePage: {
@@ -39,7 +41,7 @@ let state = {
 
 window.state = state;
 
-export let addPost = () => {
+export const addPost = () => {
   let newPost = {
     id: 4,
     message: state.profilePage.newPostText,
@@ -51,9 +53,13 @@ export let addPost = () => {
   rerenderEntireTrie(state);
 };
 
-export let updateNewPostText = (text) => {
+export const updateNewPostText = (text) => {
   state.profilePage.newPostText = text;
   rerenderEntireTrie(state);
+};
+
+export const subscribe = (observer) => {
+  rerenderEntireTrie = observer; // pattern observer
 };
 
 export default state;
