@@ -6,7 +6,8 @@ let state = {
       {id: 1, message: 'We bomb the ReactJS at the rate of Dimych!', likeCount: '15'},
       {id: 2, message: 'Hello! I am learning ReactJS!', likeCount: '20'},
       {id: 3, message: 'IT-kamsutra the best', likeCount: '99'}
-    ]
+    ],
+    newPostText: 'Write something'
   },
   dialogsPage: {
     dialogs: [
@@ -36,14 +37,22 @@ let state = {
   }
 };
 
-export let addPost = (postMessage) => {
+window.state = state;
+
+export let addPost = () => {
   let newPost = {
     id: 4,
-    message: postMessage,
+    message: state.profilePage.newPostText,
     likeCount: 0
   };
 
   state.profilePage.posts.push(newPost);
+  state.profilePage.newPostText = '';
+  rerenderEntireTrie(state);
+};
+
+export let updateNewPostText = (text) => {
+  state.profilePage.newPostText = text;
   rerenderEntireTrie(state);
 };
 

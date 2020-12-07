@@ -11,15 +11,22 @@ const MyPosts = (props) => {
   let addPost = () => {
     let text = newPostElement.current.value;
     props.addPost(text);
-    newPostElement.current.value = '';
+  };
+
+  let onPostChange = () => {
+    let text = newPostElement.current.value;
+    props.updateNewPostText(text);
   };
 
   return (
     <div className={classes.posts}>
       <h2 className={classes.name}>My Post</h2>
       <div>
-        <textarea ref={ newPostElement } autoComplete='off' rows='3' name='message' className={classes.new__post}  placeholder='your news...'></textarea>
-        <button onClick={ addPost }  className={classes.button}>Send</button>
+        <textarea onChange={ onPostChange }
+                  value={ props.newPostText }
+                  ref={ newPostElement } rows='3'
+                  className={classes.new__post} />
+        <button onClick={ addPost } className={classes.button}>Send</button>
       </div>
       { postsElements }
     </div>

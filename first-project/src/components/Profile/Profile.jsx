@@ -10,7 +10,11 @@ const Profile = (props) => {
         <img src='https://eskipaper.com/images/airplane-flight-sunset-1.jpg' alt='background' />
       </div>
       <ProfileInfo />
-      <MyPosts items={props.state.posts} addPost={props.addPost} />
+      <MyPosts
+        items={props.state.posts}
+        addPost={props.addPost}
+        updateNewPostText={props.updateNewPostText}
+        newPostText={props.state.newPostText} />
     </div>
   );
 }

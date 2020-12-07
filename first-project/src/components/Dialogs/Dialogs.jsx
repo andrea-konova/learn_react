@@ -26,8 +26,10 @@ const Dialogs = (props) => {
         { messsagesElements }
       </div>
       <div className={classes.add__message}>
-        <textarea ref={ newMessageElement } autoComplete='off' rows='3'
-                  className={classes.new__mess}  placeholder='your message...'></textarea>
+        <textarea ref={ newMessageElement }
+                  rows='3'
+                  className={classes.new__mess}
+                  placeholder='your message...' />
         <button onClick={ addMessage } className={classes.button}>Send Message</button>
       </div>
     </div>
