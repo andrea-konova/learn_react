@@ -1,10 +1,16 @@
+const ADD_POST = 'ADD-POST';
+const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
+
+const ADD_MESSAGE = 'ADD-MESSAGE';
+const UPDATE_NEW_MESSAGE_TEXT = 'UPDATE-NEW-MESSAGE-TEXT';
+
 let store = {
   _state: {
     profilePage: {
       posts: [
         {id: 1, message: 'We bomb the ReactJS at the rate of Dimych!', likeCount: '15'},
         {id: 2, message: 'Hello! I am learning ReactJS!', likeCount: '20'},
-        {id: 3, message: 'IT-kamsutra the best', likeCount: '99'}
+        {id: 3, message: 'IT-kamasutra the best', likeCount: '99'}
       ],
       newPostText: 'Write something'
     },
@@ -22,7 +28,8 @@ let store = {
         {id: 2, message: 'What you doing?'},
         {id: 3, message: 'I am fine!'},
         {id: 4, message: 'Good bay'}
-      ]
+      ],
+      newMessageText: 'Say hi to your friends'
     },
     sidebar: {
       friends: [
@@ -57,9 +64,47 @@ let store = {
       this._callSubscriber(this._state);
 
     } else if (action.type === 'UPDATE-NEW-POST-TEXT') {
-      this._state.profilePage.newPostText = action.text;
+        this._state.profilePage.newPostText = action.text;
+        this._callSubscriber(this._state);
+    } else if (action.type === 'ADD-MESSAGE') {
+        let newMessage = {
+          id: 6,
+          message: this._state.dialogsPage.newMessageText
+        };
+
+        this._state.dialogsPage.messages.push(newMessage);
+        this._state.dialogsPage.newMessageText = '';
+        this._callSubscriber(this._state);
+    } else if (action.type === 'UPDATE-NEW-MESSAGE-TEXT') {
+      this._state.dialogsPage.newMessageText = action.text;
       this._callSubscriber(this._state);
-    }
+    };
+  }
+};
+
+export const addPostActionCreator = () => {
+  return {
+    type: ADD_POST
+  }
+};
+
+export const updateNewPostTextActionCreator = (text) => {
+  return {
+    type: UPDATE_NEW_POST_TEXT,
+    text: text
+  }
+};
+
+export const addMessageActionCreator = () => {
+  return {
+    type: ADD_MESSAGE
+  }
+};
+
+export const updateNewMessageTextActionCreator = (mess) => {
+  return {
+    type: UPDATE_NEW_MESSAGE_TEXT,
+    text: mess
   }
 };
 
