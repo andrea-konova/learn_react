@@ -1,9 +1,17 @@
-import dialogsReducer from "./dialogs-reducer";
 
 const ADD_POST = 'ADD-POST';
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
 
-const profileReducer = (state, action) => {
+let initialState = {
+  posts: [
+    {id: 1, message: 'We bomb the ReactJS at the rate of Dimych!', likeCount: '15'},
+    {id: 2, message: 'Hello! I am learning ReactJS!', likeCount: '20'},
+    {id: 3, message: 'IT-kamasutra the best', likeCount: '99'}
+  ],
+  newPostText: 'Write something'
+};
+
+const profileReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_POST:
       let newPost = {
