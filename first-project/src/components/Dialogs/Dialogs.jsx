@@ -2,24 +2,25 @@ import React from 'react';
 import classes from './Dialogs.module.css';
 import DialogItem from "./DialogItem/DialogItem";
 import Message from "./Message/Message";
-import {addMessageActionCreator, updateNewMessageTextActionCreator} from "../../redux/dialogs-reducer";
 
 const Dialogs = (props) => {
-  let dialogsElements = props.state.dialogs
+  let state = props.dialogsPage;
+
+  let dialogsElements = state.dialogs
     .map( (d, index) => <DialogItem name={d.name} id={d.id} key={index} /> )
 
-  let messsagesElements = props.state.messages
+  let messsagesElements = state.messages
     .map( (m, index) => <Message message={m.message} id={m.id} key={index} /> );
 
   let newMessageElement = React.createRef();
 
-  const addMessage = () => {
-    props.dispatch(addMessageActionCreator());
+  const onSendMessage = () => {
+    props.sendMessage();
   };
 
   let onMessageChange = () => {
     let mess = newMessageElement.current.value;
-    props.dispatch(updateNewMessageTextActionCreator(mess));
+    props.updateNewMessageText(mess);
   };
 
   return (
@@ -32,10 +33,10 @@ const Dialogs = (props) => {
       </div>
       <div className={classes.add__message}>
         <textarea onChange={ onMessageChange }
-                  value={ props.newMessageText }
+                  value={ state.newMessageText }
                   ref={ newMessageElement } rows='3'
                   className={classes.new__mess} />
-        <button onClick={ addMessage } className={classes.button}>Send Message</button>
+        <button onClick={ onSendMessage } className={classes.button}>Send Message</button>
       </div>
     </div>
   );
