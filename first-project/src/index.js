@@ -5,9 +5,10 @@ import ReactDOM from "react-dom";
 import React from "react";
 import {BrowserRouter} from "react-router-dom";
 import App from "./App";
-import {Provider} from "./StoreContext";
+import {Provider} from "react-redux";
 
-let rerenderEntireTrie = (state) => {
+
+let rerenderEntireTrie = () => {
   ReactDOM.render(
     <React.StrictMode>
       <BrowserRouter>
@@ -20,11 +21,10 @@ let rerenderEntireTrie = (state) => {
   );
 };
 
-rerenderEntireTrie(store.getState());
+rerenderEntireTrie();
 
 store.subscribe(() => {
-  let state = store.getState();
-  rerenderEntireTrie(state);
+  rerenderEntireTrie();
 });
 
 // If you want to start measuring performance in your app, pass a function
