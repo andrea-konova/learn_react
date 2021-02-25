@@ -1,6 +1,7 @@
 import React from 'react';
 import classes from './Users.module.css';
 import userPhoto from "../../assets/images/user.png";
+import DialogItem from "../Dialogs/DialogItem/DialogItem";
 
 let Users = (props) => {
     let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
@@ -13,8 +14,8 @@ let Users = (props) => {
     return (
         <div>
           <div>
-            {pages.map( p => {
-              return <span className={props.currentPage === p && classes.selectedPage }
+            {pages.map( (p, index) => {
+              return <span className={props.currentPage === p && classes.selectedPage } key={index}
               onClick={ (e) => { props.onPageChanged(p); }}>{ p }</span>
             })}
           </div>
