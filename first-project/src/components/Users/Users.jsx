@@ -1,7 +1,6 @@
 import React from 'react';
 import classes from './Users.module.css';
 import userPhoto from "../../assets/images/user.png";
-import DialogItem from "../Dialogs/DialogItem/DialogItem";
 
 let Users = (props) => {
     let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
