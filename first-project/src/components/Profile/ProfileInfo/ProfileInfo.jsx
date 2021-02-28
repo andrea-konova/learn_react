@@ -1,18 +1,23 @@
 import React from 'react';
 import classes from './ProfileInfo.module.css';
+import Preloader from "../../Common/Preloader/Preloader";
 
-const ProfileInfo = () => {
+const ProfileInfo = (props) => {
+  if (!props.profile) {
+    return <Preloader />
+  }
+
   return (
       <div className={classes.author}>
         <div className={classes.author__logo}>
-          <img src='https://i.ytimg.com/vi/1Ne1hqOXKKI/maxresdefault.jpg' alt='author__logo' />
+          <img src={props.profile.photos.large} alt='author__logo' />
         </div>
         <div className={classes.author__description}>
-          <h2 className={classes.name}>Andrii K.</h2>
-          <p className={classes.info}>Date of Birth: 13 february</p>
-          <p className={classes.info}>City: Kharkiv</p>
-          <p className={classes.info}>Education: KHAI'18</p>
-          <p className={classes.info}>Web Site: https://andrii-konovalenko.co.ua/</p>
+          <h2 className={classes.name}>{props.profile.fullName}</h2>
+          <p className={classes.info}>About Me: {props.profile.aboutMe}</p>
+          <p className={classes.info}>looking For AJob: {props.profile.lookingForAJob ? 'уes' : 'no'}</p>
+          <p className={classes.info}>looking For A Job Description: {props.profile.lookingForAJobDescription}</p>
+          <p className={classes.info}>instagram: {props.profile.contacts.instagram}</p>
         </div>
       </div>
   );

@@ -9,7 +9,7 @@ const Profile = (props) => {
       <div className={classes.wrapper}>
         <img src='https://eskipaper.com/images/airplane-flight-sunset-1.jpg' alt='background' />
       </div>
-      <ProfileInfo />
+      <ProfileInfo profile={props.profile} />
       <MyPostsContainer />
     </div>
   );
