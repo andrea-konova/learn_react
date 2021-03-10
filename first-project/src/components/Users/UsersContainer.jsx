@@ -1,9 +1,9 @@
 import React from 'react';
 import {connect} from "react-redux";
 import {
-  follow, getUsers,
+  getUsers,
   setCurrentPage,
-  unfollow
+  unfollow, follow
 } from "../../redux/users-reducer";
 import Users from "./Users";
 import Preloader from "../Common/Preloader/Preloader";
@@ -11,9 +11,7 @@ import Preloader from "../Common/Preloader/Preloader";
 class UsersAPIComponents extends React.Component {
 
   componentDidMount() {
-    // if (this.props.users.length === 0) {
-      this.props.getUsers(this.props.currentPage, this.props.pageSize);
-    // }
+    this.props.getUsers(this.props.currentPage, this.props.pageSize);
   }
 
   onPageChanged = (pageNumber) => {
@@ -49,7 +47,7 @@ let mapStateToProps = (state) => {
 }
 
 const UsersContainer = connect(mapStateToProps, {
-  follow, unfollow,
+  unfollow, follow,
   setCurrentPage,
   getUsers
 }) (UsersAPIComponents);
