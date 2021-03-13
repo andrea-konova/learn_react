@@ -2,7 +2,7 @@ import React from 'react';
 import classes from './Dialogs.module.css';
 import DialogItem from "./DialogItem/DialogItem";
 import Message from "./Message/Message";
-import {Redirect} from "react-router-dom"
+
 
 const Dialogs = (props) => {
   let state = props.dialogsPage;
@@ -10,7 +10,7 @@ const Dialogs = (props) => {
   let dialogsElements = state.dialogs
     .map( (d, index) => <DialogItem name={d.name} id={d.id} key={index} /> )
 
-  let messsagesElements = state.messages
+  let messagesElements = state.messages
     .map( (m, index) => <Message message={m.message} id={m.id} key={index} /> );
 
   let newMessageElement = React.createRef();
@@ -24,15 +24,13 @@ const Dialogs = (props) => {
     props.updateNewMessageText(mess);
   };
 
-  if (!props.isAuth) return <Redirect to={"/login"} />;
-
   return (
     <div className={classes.dialogs}>
       <div className={classes.dialogs__items}>
         { dialogsElements }
       </div>
       <div className={classes.messages}>
-        { messsagesElements }
+        { messagesElements }
       </div>
       <div className={classes.add__message}>
         <textarea onChange={ onMessageChange }
