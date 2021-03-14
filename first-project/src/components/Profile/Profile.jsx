@@ -7,7 +7,7 @@ const Profile = (props) => {
   return (
     <div className={classes.profile}>
       <div className={classes.wrapper}>
-        <img src='https://eskipaper.com/images/airplane-flight-sunset-1.jpg' alt='background' />
+        <img src='https://nicegarden.com.ua/image/catalog/brands/Samurai.png' alt='background' />
       </div>
       <ProfileInfo profile={props.profile} />
       <MyPostsContainer />
