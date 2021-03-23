@@ -7,7 +7,6 @@ const ProfileInfo = (props) => {
   if (!props.profile) {
     return <Preloader />
   }
-
   return (
       <div className={classes.author}>
         <div className={classes.author__logo}>
@@ -15,7 +14,7 @@ const ProfileInfo = (props) => {
         </div>
         <div className={classes.author__description}>
           <h2 className={classes.name}>{props.profile.fullName}</h2>
-          <ProfileStatus status={"Hello, samurai"} />
+          <ProfileStatus status={props.status} updateStatus={props.updateStatus}/>
           <p className={classes.info}>About Me: {props.profile.aboutMe}</p>
           <p className={classes.info}>looking For AJob: {props.profile.lookingForAJob ? 'уes' : 'no'}</p>
           <p className={classes.info}>looking For A Job Description: {props.profile.lookingForAJobDescription}</p>

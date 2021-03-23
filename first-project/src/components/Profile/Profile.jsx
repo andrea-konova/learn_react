@@ -9,7 +9,7 @@ const Profile = (props) => {
       <div className={classes.wrapper}>
         <img src='https://nicegarden.com.ua/image/catalog/brands/Samurai.png' alt='background' />
       </div>
-      <ProfileInfo profile={props.profile} />
+      <ProfileInfo profile={props.profile} status={props.status} updateStatus={props.updateStatus} />
       <MyPostsContainer />
     </div>
   );
