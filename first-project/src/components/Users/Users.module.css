@@ -1,0 +1,10 @@
+.item {
+    font-size: 32px;
+    color: #3b5998;
+}
+.userPhoto {
+    width: 100px;
+}
+.selectedPage {
+    font-weight: bold;
+}

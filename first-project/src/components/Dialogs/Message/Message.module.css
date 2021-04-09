@@ -1,0 +1,31 @@
+.item {
+    display: flex;
+    justify-content: flex-end;
+    margin: 10px;
+}
+
+.item__right {
+    justify-content: flex-end;
+}
+
+.item__left {
+    justify-content: flex-start;
+}
+
+.message {
+    padding: 5px 10px;
+    width: 65%;
+    border: none;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.message__right {
+    text-align: right;
+    background-color: rgba(59, 89, 152, .3);
+}
+
+.message__left {
+    text-align: left;
+    background-color: #f6f7f9;
+}

@@ -1,0 +1,35 @@
+.dialog__item {
+    display: flex;
+    align-items: center;
+}
+
+.dialog {
+    display: block;
+    padding: 5px 0;
+    color: #00051d;
+    text-decoration: none;
+    transform: translate(0.3s);
+}
+
+.dialog:hover {
+    font-weight: bold;
+    color: #1f2128;
+}
+
+.active {
+    padding: 15px 0;
+    font-size: 22px;
+    font-weight: bold;
+    color: #3b5998;
+}
+
+.logo {
+    margin-right: 10px;
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 50%;
+    font-weight: bold;
+    background-color: rgba(59, 89, 152, .5);;
+    text-align: center;
+}

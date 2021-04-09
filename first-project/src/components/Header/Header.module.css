@@ -1,0 +1,30 @@
+.header {
+  grid-area: h;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  background-color: #3b5998;
+}
+
+.headRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.logo {
+  padding-left: 10px;
+  font-size: 32px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.loginBlock {
+  padding-right: 10px;
+}
+
+.loginBlock a {
+  text-decoration: none;
+  color: white;
+}

@@ -1,0 +1,58 @@
+.dialogs {
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+    grid-template-areas:
+    'di m'
+    'di am';
+    grid-gap: 20px;
+    font-size: 20px;
+}
+
+.dialogs__items {
+    grid-area: di;
+    padding: 10px;
+    background-color: #fff;
+}
+
+.messages {
+    grid-area: m;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    background-color: #fff;
+}
+
+.add__message {
+    grid-area: am;
+}
+
+.new__mess {
+    margin-bottom: 10px;
+    padding: 0;
+    width: 100%;
+    background-color: #fcfcfc;
+    border: 1px solid #dbdde0;
+    border-radius: 5px;
+    font-size: 22px;
+}
+
+.new__mess::placeholder {
+    padding-left: 10px;
+    font-size: 22px;
+}
+
+.button {
+    margin-bottom: 10px;
+    padding: 10px 30px;
+    font-size: 20px;
+    border: 1px solid #dbdde0;
+    border-radius: 5px;
+    color: #fff;
+    background: #3b5998;
+    transform: translate(0.3s);
+}
+
+.button:hover {
+    cursor: pointer;
+    background: #1f2128;
+}

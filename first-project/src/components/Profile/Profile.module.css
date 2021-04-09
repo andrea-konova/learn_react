@@ -1,0 +1,58 @@
+.profile {
+  display: grid;
+  margin: 0 auto;
+  grid-template-areas: 
+  'wr wr'
+  'au au'
+  'p p';
+  grid-template-rows: 300px 1fr;
+  grid-template-columns: 2fr 10fr;
+  grid-gap: 20px;
+}
+
+.wrapper {
+  grid-area: wr;
+  width: 100%;
+  height: 300px;
+}
+
+.profile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.posts {
+  grid-area: p;
+}
+
+.new__post {
+  margin-bottom: 10px;
+  padding: 0;
+  width: 100%;
+  background-color: #fcfcfc;
+  border: 1px solid #dbdde0;
+  border-radius: 5px;
+  font-size: 22px;
+}
+
+.new__post::placeholder {
+  padding-left: 10px;
+  font-size: 22px;
+}
+
+.button {
+  padding: 10px 30px;
+  font-size: 20px;
+  border: 1px solid #dbdde0;
+  border-radius: 5px;
+  color: #fff;
+  background: #3b5998;
+  transform: translate(0.3s);
+}
+
+.button:hover {
+  cursor: pointer;
+  background: #1f2128;
+}

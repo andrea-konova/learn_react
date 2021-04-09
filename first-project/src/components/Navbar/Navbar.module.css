@@ -1,0 +1,43 @@
+.navbar {
+  grid-area: n;
+}
+
+.menu {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.list {
+  width: 100%;
+}
+.list.mt {
+  margin-top: 50px;
+}
+
+.item {
+  display: block;
+  padding: 5px 0 5px 10px;
+  width: 93%;
+  text-decoration: none;
+  font-size: 24px;
+  color: #00051d;
+  border: 1px solid transparent;
+  transform: translate(0.3s);
+}
+
+.item:hover {
+  font-weight: bold;
+  color: #1f2128;
+  background-color: #f6f7f9;
+  border: 1px solid #dbdde0;
+  border-radius: 5px;
+}
+
+.active {
+  font-weight: bold;
+  color: #1f2128;
+  background-color: #f6f7f9;
+  border: 1px solid #dbdde0;
+  border-radius: 5px;
+}
